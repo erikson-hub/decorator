@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row my-3">
+    <form (ngSubmit)="onSubmit(contactForm.value)" #contactForm="ngForm">
+      <h2 class="text-primary">Registro de Personas</h2>
+      <app-c-hijo [values]="valores"></app-c-hijo>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="model.name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="dni" class="form-label">DNI:</label>
+        <input
+          type="number"
+          name="dni"
+          class="form-control"
+          id="dni"
+          [(ngModel)]="model.dni"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="estado">Estado Civil</label>
+        <select class="form-select" name="estado" [(ngModel)]="model.estado">
+          <option selected>Seleccione</option>
+          <option value="soltero">Soltero</option>
+          <option value="casado">Casado</option>
+          <option value="divorciado">Divorciado</option>
+          <option value="viudo">Viudo</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+      
+  </div>
+</div>
